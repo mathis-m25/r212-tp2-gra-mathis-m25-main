@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  /* 1. Variables de thème (Couleurs extraites de la maquette) */
+  --color-bg-dark: #121212;     
+  --color-primary: #C5A47E;    
+  --color-text-main: #1A1A1A;  
+  --color-text-muted: #666666;  
+  --color-white: #FFFFFF;
+
+  /* 2. Typographie (Fontsource) */
+  --font-main: "Inter", sans-serif; /* */
+}
+
+@layer base {
+  /* 3. Règles de base (Styles globaux) */
+  body {
+    font-family: var(--font-main);
+    color: var(--color-text-main);
+    @apply antialiased bg-white; /* */
+  }
+
+  /* Style par défaut pour les liens */
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  /* Titres conformes au guide de style */
+  h1, h2, h3, h4 {
+    @apply font-semibold tracking-tight;
+    color: var(--color-text-main);
+  }
+}

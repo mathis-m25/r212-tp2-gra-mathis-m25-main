@@ -1,0 +1,61 @@
+---
+const { title, description, image = "/screenshot.avif" } = Astro.props;
+
+const baseUrl = "https://housemood.com";
+const pageUrl = `${baseUrl}${Astro.url.pathname}`;
+const siteName = "Housemood";
+
+const titleHead =
+  Astro.url.pathname === "/" ? siteName : `${title} — ${siteName}`;
+const imageUrl = image.startsWith("http") ? image : `${baseUrl}${image}`;
+
+// 1. Importation du composant Footer
+import Footer from '../components/Footer.astro';
+
+// 2. Importation de la police via Fontsource
+// (Assure-toi d'avoir fait : npm install @fontsource/inter)
+import '@fontsource/inter';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{titleHead}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content={titleHead} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={titleHead} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <link rel="canonical" href={pageUrl} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+  </head>
+
+  <body>
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
