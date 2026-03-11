@@ -1,37 +1,37 @@
 ---
 /* Footer.astro */
 ---
-<footer class="relative bg-bg-dark text-white pt-20 pb-10 px-8 overflow-hidden">
+<footer class="relative bg-[var(--color-bg-dark)] text-white pt-20 pb-10 overflow-hidden">
   <div class="absolute inset-0 z-0 opacity-20 grayscale">
     <img src="/screenshot.avif" alt="" class="w-full h-full object-cover" />
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-start mb-24">
-      
-      <div class="max-w-[250px] mb-10 md:mb-0">
-        <p class="text-sm font-light leading-relaxed text-gray-400">
+  <div class="relative z-10 grid-hybrid">
+    
+    <div class="col-span-12 md:col-span-6 mb-10 md:mb-0">
+      <div class="max-w-[250px]">
+        <p class="text-sm font-light leading-relaxed text-[var(--color-text-muted)]">
           We transform your vision into beautifully crafted spaces.
         </p>
       </div>
-
-      <nav>
-        <ul class="flex flex-col gap-4 text-right">
-          <li><a href="/" class="text-sm uppercase tracking-widest hover:text-primary transition">Home</a></li>
-          <li><a href="/portfolio" class="text-sm uppercase tracking-widest hover:text-primary transition">Portfolio</a></li>
-          <li><a href="/about" class="text-sm uppercase tracking-widest hover:text-primary transition">About us</a></li>
-          <li><a href="/contact" class="text-sm uppercase tracking-widest hover:text-primary transition">Contact</a></li>
-        </ul>
-      </nav>
     </div>
 
-    <div class="text-center border-t border-white/10 pt-16">
-      <a href="mailto:hi@housemood.com" class="text-4xl md:text-8xl font-thin tracking-tighter hover:italic transition-all duration-700">
+    <nav class="col-span-12 md:col-span-6">
+      <ul class="flex flex-col gap-4 md:items-end">
+        <li><a href="/" class="text-sm uppercase tracking-widest hover:text-[var(--color-primary)] transition">Home</a></li>
+        <li><a href="/portfolio" class="text-sm uppercase tracking-widest hover:text-[var(--color-primary)] transition">Portfolio</a></li>
+        <li><a href="/about" class="text-sm uppercase tracking-widest hover:text-[var(--color-primary)] transition">About us</a></li>
+        <li><a href="/contact" class="text-sm uppercase tracking-widest hover:text-[var(--color-primary)] transition">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="col-span-12 text-center border-t border-white/10 pt-16 mt-24">
+      <a href="mailto:hi@housemood.com" class="text-4xl md:text-8xl font-thin tracking-tighter hover:italic transition-all duration-700 block">
         hi@housemood.com
       </a>
     </div>
     
-    <div class="mt-20 text-[10px] text-gray-600 uppercase tracking-[0.2em] text-center">
+    <div class="col-span-12 mt-20 text-[10px] text-gray-600 uppercase tracking-[0.2em] text-center">
       © 2026 Housemood — All rights reserved
     </div>
   </div>

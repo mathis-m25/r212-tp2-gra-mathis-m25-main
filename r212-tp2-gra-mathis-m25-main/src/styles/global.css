@@ -10,10 +10,14 @@
 
   /* 2. Typographie (Fontsource) */
   --font-main: "Inter", sans-serif; /* */
+
+  /* 3. Variable de taille de colonne */
+  --spacing-col-custom: 80px;
+  --size-grid-max: 1280px;
 }
 
 @layer base {
-  /* 3. Règles de base (Styles globaux) */
+  /* 4. Règles de base (Styles globaux) */
   body {
     font-family: var(--font-main);
     color: var(--color-text-main);
@@ -30,4 +34,21 @@
     @apply font-semibold tracking-tight;
     color: var(--color-text-main);
   }
+}
+
+@utility grid-hybrid {
+  display: grid;
+  /* Grille de 12 colonnes fluides */
+  grid-template-columns: repeat(12, minmax(0, var(--spacing-col-custom)));
+  /* Centrage et largeur max */
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--size-grid-max);
+  /* Espacement de sécurité sur les côtés */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  /* Gouttière entre les colonnes */
+  gap: 1.5rem;
 }
